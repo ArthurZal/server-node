@@ -2,12 +2,8 @@ import fastify from "fastify";
 
 const app = fastify();
 
-app.get('/', () => {
-    return 'home'
-})
-
-app.get('/teste', () => {
-    return '<TESTE>'
+app.post('/events', (request, reply) => {
+    console.log(request.body)
 })
 
 app.listen({port: 3333}).then(() => {
